@@ -1,8 +1,8 @@
 		body{
 			font-family: DejaVuSansCondensed, sans-serif; font-size: 11pt;
-			background:url("http://www.classcontrol.com.br/files/thumbs/blog_0239-certificado_capa-800x450.png?v=1522941872");
-			background-size: cover;
-			
+			background: url("../../img/certificado.jpg");
+    		background-size: 975px px;
+						
 		}
 		p { text-align: justify; margin-bottom: 4pt;  margin-top:0pt; }
 
@@ -11,41 +11,8 @@
 			text-align: center; color: #999999; 
 			margin-top: 8pt; margin-bottom: 8pt;
 		}
-
-		a {	color: #000066; font-style: normal; text-decoration: underline; 
-			font-weight: normal; }
-
-		pre { font-family: DejaVuSansMono, monospaced; font-size: 9pt; margin-top: 5pt; margin-bottom: 5pt; }
-
-		h1 {	font-weight: normal; font-size: 26pt; color: #000066; 
-			font-family: DejaVuSansCondensed, sans-serif; margin-top: 18pt; margin-bottom: 6pt; 
-			}
-		h2 {	font-weight: bold; font-size: 12pt; color: #000066; 
-			font-family: DejaVuSansCondensed, sans-serif; margin-top: 6pt; margin-bottom: 6pt }
-		h3 {	font-weight: normal; font-size: 26pt; color: #000000; 
-			font-family: DejaVuSansCondensed, sans-serif; margin-top: 0pt; margin-bottom: 6pt; 
-			border-top: 0; border-bottom: 0; 
-			text-align: ; }
-		h4 {	font-weight: ; font-size: 13pt; color: #9f2b1e; 
-			font-family: DejaVuSansCondensed, sans-serif; margin-top: 10pt; margin-bottom: 7pt; 
-			font-variant: small-caps;
-			text-align: ;  margin-collapse:collapse; page-break-after:avoid; }
-		h5 {	font-weight: bold; font-style:italic; ; font-size: 11pt; color: #000044; 
-			font-family: DejaVuSansCondensed, sans-serif; margin-top: 8pt; margin-bottom: 4pt; 
-			text-align: ;  page-break-after:avoid; }
-		h6 {	font-weight: bold; font-size: 9.5pt; color: #333333; 
-			font-family: DejaVuSansCondensed, sans-serif; margin-top: 6pt; margin-bottom: ; 
-			text-align: ;  page-break-after:avoid; }
-
-
-		.breadcrumb {
-			text-align: right; font-size: 8pt; font-family: DejaVuSerifCondensed, serif; color: #666666;
-			font-weight: bold; font-style: normal; margin-bottom: 6pt; }
-
-		.infobox { margin-top:10pt; background-color:#DDDDBB; text-align:center; border:1px solid #880000; }
-
-		.big { font-size: 1.5em; }
-		.red { color: #880000; }
-		.slanted { font-style: italic; }
-
+		h5 {
+			font-weight: bold; font-style:italic; ; font-size: 11pt; color: #900; 
+			font-family: DejaVuSansCondensed, sans-serif; text-align: center;
+		}
 
