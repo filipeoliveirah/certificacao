@@ -1,7 +1,15 @@
-<?php
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emissão de Certificado - Mini curso: Produtividade de Vendas</title>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <?php
     session_start();
-    if(isset($_SESSION['aprovado']) && $_SESSION['aprovado'] == 'sim'):       
-    
+    if(isset($_SESSION['aprovado']) && $_SESSION['aprovado'] == 'sim'){
         $html = '
         <pageheader name="myHeaderNoNum" content-left="My Book Title" content-center="myHeader1" content-right="" header-style="font-family:sans-serif; font-size:8pt; color:#880000;" header-style-right="font-size:12pt; font-weight:bold; font-style:italic; color:#088000;" line="on" />
 
@@ -53,7 +61,18 @@
         $mpdf->SetTitle('Certificado Mini Curso de Vendas');
         $mpdf->Output('certificado-dna-de-vendas.pdf',"I");
         exit;        
-    endif;
-    echo "Você não tem permissão acessar esta página".
-    
-?>
+    }
+    else{
+        echo "
+        <div style='margin-top: 200px'>    
+            <div class='logo-dna'><img src='https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas-white.svg'></div>
+            <div class='alerta'>        
+                <h2 style='text-align: center;'>Você precisa ser aprovado para emitir um certificado</h2>
+            </div>
+        </div>    
+        ";
+    }
+    ?>
+</body>
+
+</html> 

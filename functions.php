@@ -1,38 +1,58 @@
 <?php
-    session_start();       
+	session_start();	
+	
+	class Config {		
+		private $user = 'root';
+		private $password = 'root';
+		private $db = 'dna_certificacao';
+		private $host = 'localhost';
+		private $port = 3306;		
+	}
+	
+	class Certificacao extends Config{		
+		
+		var $pdo;
+		function __construct(){
+			$this->pdo = new PDO('mysql:host='.$this->host.$this->port.';dbname='.$this->db, $this->user, $this->password);		
+		}
 
-    class config{
-        
-        function emitirCertificado($nomeCliente, $emailCliente){  
+		function cadastrar($nomeDigitado, $emailDigitado, $senhaGerada){
+			$stmt = $this->pdo->prepare("INSERT INTO cadastrousuario (nome, email, senha, aprovacao)
+			VALUES (:nome, :email, :senha, :aprovacao)");
+							  
+			$stmt->bindValue(":nome", utf8_encode($nomeDigitado));
+			$stmt->bindValue(":email", utf8_encode($emailDigitado));
+			$stmt->bindValue(":senha", md5($senhaGerada));
+			$stmt->bindValue(":aprovacao", "aguardando");
+			
+			if($stmt->execute()){
+				return true;
+			}else{
+				return false;
+			}			
+		}
 
-                
-            $html = '
-                <h1>Certificação</h1>
-                <h2>Mini Curso de Vendas</h2>
-                <p class="breadcrumb">Chapter &raquo; Topic</p>
-                <h3><?php echo $nomeCliente; ?></h3>
-                <h4>Heading 4</h4>
-                <h5>Heading 5</h5>
-                <p style="font-kerning: on">Nulla felis erat, imperdiet eu, ullamcorper non, nonummy quis, elit. Suspendisse potenti. Ut a eros at ligula vehicula pretium. Maecenas feugiat pede vel risus. Nulla et lectus. Fusce eleifend neque sit amet erat. Integer consectetuer nulla non orci. Morbi feugiat pulvinar dolor. Cras odio. Donec mattis, nisi id euismod auctor, neque metus pellentesque risus, at eleifend lacus sapien et risus. Phasellus metus. Phasellus feugiat, lectus ac aliquam molestie, leo lacus tincidunt turpis, vel aliquam quam odio et sapien. Mauris ante pede, auctor ac, suscipit quis, malesuada sed, nulla. Integer sit amet odio sit amet lectus luctus euismod. Donec et nulla. Sed quis orci. </p>
-                <h4>Heading using Small-Caps</h4>
-                <p>Proin aliquet lorem id felis. Curabitur vel libero at mauris nonummy tincidunt. Donec imperdiet. Vestibulum sem sem, lacinia vel, molestie et, laoreet eget, urna. Curabitur viverra faucibus pede. Morbi lobortis. Donec dapibus. Donec tempus. Ut arcu enim, rhoncus ac, venenatis eu, porttitor mollis, dui. Sed vitae risus. In elementum sem placerat dui. Nam tristique eros in nisl. Nulla cursus sapien non quam porta porttitor. Quisque dictum ipsum ornare tortor. Fusce ornare tempus enim. </p>
-            ';
+		function validarLogin($emailDigitado, $senhaDigitada){
+			$stmt = $this->pdo->prepare("SELECT * FROM cadastrousuario WHERE email = :emailUser AND senha = :senhaUser");
+			$stmt->bindValue(":emailUser", $emailDigitado);
+			$stmt->bindValue(":senhaUser", md5($senhaDigitada));
+			if($stmt->execute()){
+				return true;
+			}else{
+				return false;
+			}
+		}
 
-            include("pdf/mpdf.php");
-
-            $mpdf = new mPDF(); 
-
-            $mpdf->SetDisplayMode('fullpage');
-
-            // LOAD a stylesheet
-            $stylesheet = file_get_contents('pdf/examples/mpdfstyleA4.css');
-            $mpdf->WriteHTML($stylesheet,1);	// The parameter 1 tells that this is css/style only and no body/html/text
-
-            $mpdf->WriteHTML($html);
-
-            $mpdf->Output();
-
-            exit;
-        }
-    }
+		function gerarSenha(){
+			$length = 10;
+			$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			$charactersLength = strlen($characters);
+			$randomString = '';
+			for ($i = 0; $i < $length; $i++) {
+				$randomString .= $characters[rand(0, $charactersLength - 1)];
+			}
+			return $randomString;
+		}
+	}
+	//FIM CLASS CERTIFICACAO
 ?>

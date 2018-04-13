@@ -48,7 +48,7 @@ $(function(){
 			/*PASSANDO OS DADOS ARMAZENADOS PARA UM ARRAY JSON*/			
 			$.ajax({
 				method: 'post',
-				url: 'cadastrar.php',
+				url: 'forms/certificacao.php',
 				data: {cadastrar: 'sim', campos: array},
 				dataType: 'json',
 				beforeSend: function(){
@@ -63,7 +63,7 @@ $(function(){
 					else{
 						$('.resp').html('<div class="ok"><p>'+valor.mensagem+'</p>');
 						setTimeout(function(){ 
-							$('.resp').html('<div class="download"><a href="pdf/examples/emitir-certificado.php" target="_blank">Clique para emitir seu Certificado</a></div>');
+							$('.resp').html('<div class="download"><a href="pdf/template/emitir-certificado.php" target="_blank">Clique para emitir seu Certificado</a></div>');
 						}, 4000);
 						
 					}

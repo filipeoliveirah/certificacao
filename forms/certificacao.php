@@ -1,4 +1,8 @@
 <?php
+	session_start();
+	include("../functions.php");
+	$conn = new Certificacao();
+	
 	if(isset($_POST['cadastrar']) && $_POST['cadastrar'] == 'sim'):
 	    $novos_campos = array();
 	    $campos_post = $_POST['campos'];
@@ -12,11 +16,12 @@
 			$resultado += $novos_campos['escolha'.$esc];
 		}
 
-		$resultado /= $esc;
-		$resultado = round($resultado, 1);
+		//$resultado /= $esc;
+		//$resultado = round($resultado, 1);
 		if($resultado >= 8){
 			$respostas['erro'] = 'nao';
-			$respostas['mensagem'] = 'Aprovado! Nota: ' . $resultado;
+			$respostas['mensagem'] = 'Aprovado! ' . $resultado. 'Pontos';
+			$_SESSION['aprovado'] = 'sim';
 		}
 		
      	/*if(!strstr($novos_campos['email'], '@')){
@@ -34,7 +39,8 @@
 
 		else{
 			$respostas['erro'] = 'sim';
-			$respostas['getErro'] = 'Você não foi aprovado! Nota: ' . $resultado;
+			$respostas['getErro'] = 'Você não foi aprovado! ' . $resultado . 'Pontos';
+			$_SESSION['aprovado'] = 'nao';
 		}			
 		
 	echo json_encode($respostas);

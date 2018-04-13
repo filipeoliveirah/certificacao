@@ -2,10 +2,9 @@
 html{height: 100%; background-size: cover;  background: linear-gradient(rgba(91, 173, 239, 0.7), rgba(0, 115, 157, 0.7)), url("../img/business-options-loan.jpg");
 background-size: cover; background-position: right}
 body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200}
-a{}
 
 .logo-dna{width: 140px; margin: 20px auto}
-.erros, .ok, .download{
+.erros, .ok, .download, .alerta{
 	width: 390px;
 	padding: 5px;
 	background: orange;
@@ -18,6 +17,11 @@ a{}
 .ok{
 	background: rgba(238,249,113,0.9);
 	color: #333;
+}
+
+.alerta{
+	background: red;
+	color: white;
 }
 
 .download{background: rgba(165, 43, 232, 0.9); text-decoration: none}
@@ -39,15 +43,13 @@ a{}
 #formulario h3{color: #717171; font-size: 17px; margin: 10px 0}
 
 #formulario fieldset{
-	background: rgba(999,999,999,0.9);
+	background: rgba(999,999,999,0.8);
 	border: 0 none;
 	border-radius: 5px;
 	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	
+	-webkit-border-radius:5px;	
 	box-shadow: 0 0 15px 1px rgba(0,0,0,0.4);
-	padding: 20px 30px;
-	
+	padding: 20px 30px;	
 	box-sizing: border-box;
 	width: 100%;
 	margin: 0;
@@ -74,7 +76,7 @@ a{}
 }
 
 #formulario .acao{
-	width: 100px;
+	width: 170px;
 	background: rgba(38,128,101,0.9);
 	color: white;
 	text-transform: uppercase;

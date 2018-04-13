@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Certificação Mini Curso de Vendas</title>
+		<title>Certificação Mini Curso Produtividade de Vendas</title>
 		<meta charset="utf-8">
-		<link href="css/style.css" rel="stylesheet" type="text/css"> 
+		<link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
 		<?php
 			session_start();
-			$_SESSION['nomeCliente'] = "Filipe Matos de Oliveira";
-			$_SESSION['emailCliente'] = "filpeoliveirah@gmail.com";
+			include('functions.php');
+			$conn = new Certificacao();
+			if(!isset($_SESSION['nomeCliente'])){
+				header('Location: login.php');
+				exit;
+			}
 		?>
 				
 		<form id="formulario" method="post" enctype="multipart/form-data" name="formulario">
@@ -18,14 +22,14 @@
 			<!--<img src="https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas.svg">-->
 			<div class="logo-dna"><img src="https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas-white.svg"></div>
 			<fieldset>
-				<h2>Certificação: Mini Curso de Vendas</h2>
+				<h2>Certificação: Produtividade de Vendas</h2>
 				<h3>1) Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur?</h3>
 				<div class="escolhas">
 					<select name="escolha1">
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 
@@ -35,7 +39,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 
@@ -45,7 +49,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 
@@ -55,7 +59,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 				<input type="button" name="next1" class="next acao" value="Próximo"/>
@@ -69,7 +73,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 
@@ -79,7 +83,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 
@@ -89,7 +93,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 
@@ -99,7 +103,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 				<input type="button" name="prev" class="prev acao" value="Anterior"/>
@@ -114,7 +118,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 
@@ -124,7 +128,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 
@@ -134,7 +138,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 
@@ -144,7 +148,7 @@
 						<option value="">Escolha uma opção</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 						<option value="0">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
-						<option value="10">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
+						<option value="1">Lorem ipsum dolor sit amet, vis cu tractatos ocurreret referrentur</option>
 					</select> 
 				</div>
 				<input type="button" name="prev" class="prev acao" value="Anterior"/>
@@ -160,6 +164,7 @@
 		</form>
 		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
+		<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/66bbf119-95bf-48e1-a7e1-3626378a293f-loader.js" ></script>
 	</body>
 
 
