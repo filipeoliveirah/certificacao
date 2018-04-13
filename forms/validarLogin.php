@@ -3,7 +3,7 @@
 	include("../functions.php");
 	$conn = new Certificacao();
 
-	if(isset($_POST['cadastrar']) && $_POST['cadastrar'] == 'sim'):
+	if(isset($_POST['cadastrar']) && $_POST['cadastrar'] == 'sim'){
 	    $novos_campos = array();
 	    $campos_post = $_POST['campos'];
 	    $respostas = array();
@@ -18,9 +18,12 @@
      		$respostas['erro'] = 'sim';
      		$respostas['getErro'] = 'A senha informadas não correspondem';
 		}*/
-				
-		else{
-			if($conn->validarLogin($novos_campos['emailCliente'], $novos_campos['cSenhaCliente']) === true){
+		
+		else{			
+			$emailDigitado = $novos_campos['emailCliente'];
+			$senhaDigitada = $novos_campos['cSenhaCliente'];
+			
+			if($conn->validarLogin($emailDigitado, $senhaDigitada)){
 				$respostas['erro'] = 'nao';
 				$respostas['mensagem'] = 'Login feito com sucesso!</br> Você será redirecionado.';
 				$_SESSION['nomeCliente'] = $novos_campos['nomeCliente'];
@@ -33,5 +36,5 @@
 		
 		
 		echo json_encode($respostas);
-	endif;
+	}
 ?>

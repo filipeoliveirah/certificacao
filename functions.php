@@ -7,43 +7,43 @@
 		private $db = 'dna_certificacao';
 		private $host = 'localhost';
 		private $port = 3306;		
+		/*
+		private $user = 'root';
+		private $password = 'fZBy8NhelGwQNS';
+		private $db = 'dna_certificacao';
+		private $host = 'pro-ciapipe.c6kc9wk9fak1.us-west-2.rds.amazonaws.com';
+		private $port = 3306;*/	
+				
 	}
 	
-	class Certificacao extends Config{		
+	class Certificacao extends Config{
 		
 		var $pdo;
-		function __construct(){
-			$this->pdo = new PDO('mysql:host='.$this->host.$this->port.';dbname='.$this->db, $this->user, $this->password);		
+		public function __construct(){
+			$this->pdo = new PDO('mysql:host='.$this->host.$this->port.';dbname='.$this->db, $this->user, $this->password);
 		}
 
-		function cadastrar($nomeDigitado, $emailDigitado, $senhaGerada){
-			$stmt = $this->pdo->prepare("INSERT INTO cadastrousuario (nome, email, senha, aprovacao)
-			VALUES (:nome, :email, :senha, :aprovacao)");
+		public function cadastrar($nomeDigitado, $emailDigitado){
+			$stmt = $this->pdo->prepare("INSERT INTO cadastrousuario (nome, email) VALUES (:nome, :email)");
 							  
-			$stmt->bindValue(":nome", utf8_encode($nomeDigitado));
-			$stmt->bindValue(":email", utf8_encode($emailDigitado));
-			$stmt->bindValue(":senha", md5($senhaGerada));
-			$stmt->bindValue(":aprovacao", "aguardando");
-			
-			if($stmt->execute()){
-				return true;
-			}else{
-				return false;
-			}			
+			$stmt->bindValue(":nome", $nomeDigitado);
+			$stmt->bindValue(":email", $emailDigitado);
+			$run = $stmt->exec();
 		}
 
-		function validarLogin($emailDigitado, $senhaDigitada){
-			$stmt = $this->pdo->prepare("SELECT * FROM cadastrousuario WHERE email = :emailUser AND senha = :senhaUser");
-			$stmt->bindValue(":emailUser", $emailDigitado);
-			$stmt->bindValue(":senhaUser", md5($senhaDigitada));
-			if($stmt->execute()){
+		public function validarLogin($emailDigitado, $senhaDigitada){
+			$stmt = $this->pdo->prepare("SELECT email, senha FROM cadastrousuario WHERE email = :emailUser
+			AND senha = :senhaUser");
+			$stmt->bindValue(":emailUser", "filipeoliveirah@gmail.com");
+			$stmt->bindValue(":senhaUser", "12002000");
+			if($stmt->execute()){				
 				return true;
 			}else{
 				return false;
 			}
 		}
-
-		function gerarSenha(){
+		
+		public function gerarSenha(){
 			$length = 10;
 			$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 			$charactersLength = strlen($characters);

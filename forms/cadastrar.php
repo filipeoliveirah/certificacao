@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include("../functions.php");
-	$conn = new Certificacao();
+	$conn = new Config();
 
 	if(isset($_POST['cadastrar']) && $_POST['cadastrar'] == 'sim'):
 	    $novos_campos = array();
@@ -22,8 +22,8 @@
 			$nomeDigitado = $novos_campos['nomeCliente'];
 			$emailDigitado = $novos_campos['emailCliente'];
 			$senhaGerada = "12002000";
-			$assuntoEmail = "Confirmação de cadastro | Certificação Dna de Vendas";
-			if($conn->cadastrar('Filipe','filipeoliveirah@gmail.com','123') === true){
+			//$assuntoEmail = "Confirmação de cadastro | Certificação Dna de Vendas";
+			if($conn->cadastrar($nomeDigitado, $emailDigitado)){
 				$respostas['erro'] = 'nao';
 				$respostas['mensagem'] = 'Sucesso! Você receberá um email com senha de acesso.';				
 				//$conn->enviarEmail($emailDigitado, $senhaGerada, $assuntoEmail);
@@ -31,7 +31,7 @@
 			}
 			else{
 				$respostas['erro'] = 'sim';
-				$respostas['getErro'] = 'Erro ao cadastrar.';
+				$respostas['getErro'] = 'Não foi possível cadastrar';
 			}
 		}
 		

@@ -8,9 +8,8 @@
 
 	<body>
 		<?php		
-			session_start();
 			include('functions.php');
-			$conn = new Certificacao();	
+			$conn = new Config();	
 			if(isset($_SESSION['nomeCliente'])){
 				header('Location: index.php');
 				exit;
