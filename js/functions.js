@@ -73,8 +73,7 @@ $(function(){
 						$('.resp').html('<div class="ok"><p>'+valor.mensagem+'</p>');
 						setTimeout(function(){ 
 							$('.resp').html('<div class="download"><a href="pdf/template/emitir-certificado.php" target="_blank">Clique para emitir seu Certificado</a></div>');
-						}, 4000);
-						
+						}, 4000);						
 					}
 				}
 			});	
