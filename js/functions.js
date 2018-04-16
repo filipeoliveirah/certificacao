@@ -39,6 +39,15 @@ $(function(){
 			next($(this));
 		}		
 	});
+	$('input[name=next3]').click(function(){
+		var array = formulario.serializeArray();
+		if(array[0].value == ''){
+			$('.resp').html('<div class="erros"><p>Preencha os dados da segunda etapa.</p></div>');
+		}else{
+			$('.resp').html('');
+			next($(this));
+		}		
+	});
 
 	$('input[type=submit]').click(function(evento){
 		var array = formulario.serializeArray();

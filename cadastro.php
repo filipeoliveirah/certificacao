@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="bg-cadastro">
 	<head>
 		<title>Cadastro | Certificação Dna de Vendas</title>
 		<meta charset="utf-8">
@@ -9,7 +9,7 @@
 	<body>
 		<?php		
 			include('functions.php');
-			$conn = new Config();	
+			$conn = new Certificacao();	
 			if(isset($_SESSION['nomeCliente'])){
 				header('Location: index.php');
 				exit;

@@ -1,12 +1,12 @@
 <?php
 	session_start();	
 	
-	class Config {		
-		private $user = 'root';
-		private $password = 'root';
-		private $db = 'dna_certificacao';
-		private $host = 'localhost';
-		private $port = 3306;		
+	class config {		
+		var $user = 'root';
+		var $password = 'root';
+		var $db = 'dna_certificacao';
+		var $host = 'localhost:';
+		var $port = 3306;		
 		/*
 		private $user = 'root';
 		private $password = 'fZBy8NhelGwQNS';
@@ -16,31 +16,50 @@
 				
 	}
 	
-	class Certificacao extends Config{
+	class certificacao extends config{
 		
 		var $pdo;
-		public function __construct(){
-			$this->pdo = new PDO('mysql:host='.$this->host.$this->port.';dbname='.$this->db, $this->user, $this->password);
+		function __construct(){
+			$this->pdo = new PDO('mysql:host='.$this->host.$this->port.';dbname='.$this->db, $this->user, $this->password); 
 		}
 
-		public function cadastrar($nomeDigitado, $emailDigitado){
-			$stmt = $this->pdo->prepare("INSERT INTO cadastrousuario (nome, email) VALUES (:nome, :email)");
+		public function cadastrar($nomeDigitado, $emailDigitado, $senhaGerada){
+			$stmt = $this->pdo->prepare("INSERT INTO cadastro(nome, email, senha, aprovacao) VALUES (:nome, :email, :senha, :aprovacao)");
 							  
 			$stmt->bindValue(":nome", $nomeDigitado);
 			$stmt->bindValue(":email", $emailDigitado);
-			$run = $stmt->exec();
-		}
-
-		public function validarLogin($emailDigitado, $senhaDigitada){
-			$stmt = $this->pdo->prepare("SELECT email, senha FROM cadastrousuario WHERE email = :emailUser
-			AND senha = :senhaUser");
-			$stmt->bindValue(":emailUser", "filipeoliveirah@gmail.com");
-			$stmt->bindValue(":senhaUser", "12002000");
-			if($stmt->execute()){				
+			$stmt->bindValue(":senha", $senhaGerada);
+			$stmt->bindValue(":aprovacao", "Aguardando");
+			if($run = $stmt->execute()){
 				return true;
 			}else{
 				return false;
 			}
+		}
+
+		public function validarLogin($emailDigitado, $senhaDigitada){
+			$stmt = $this->pdo->prepare("SELECT email, senha FROM cadastro WHERE email = :emailUser
+			AND senha = :senhaUser");
+			$stmt->bindValue(":emailUser", $emailDigitado);
+			$stmt->bindValue(":senhaUser", $senhaDigitada);
+			$stmt->execute();
+			if($stmt->rowCount() == 1){				
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		public function dadosCliente($emailDigitado, $senhaDigitada){
+			$stmt = $this->pdo->prepare("SELECT * FROM cadastro WHERE email = :emailUser
+			AND senha = :senhaUser");
+			$stmt->bindValue(":emailUser", $emailDigitado);
+			$stmt->bindValue(":senhaUser", $senhaDigitada);
+			$stmt->execute();
+			$rs = $stmt->fetch(PDO::FETCH_ASSOC);
+							
+			return $rs;
+			
 		}
 		
 		public function gerarSenha(){

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="bg-login">
 	<head>
 		<title>Login | Certificação Dna de Vendas</title>
 		<meta charset="utf-8">
@@ -8,7 +8,6 @@
 
 	<body>
 		<?php		
-			session_start();
 			include('functions.php');
 			$conn = new Certificacao();	
 			if(isset($_SESSION['nomeCliente'])){
@@ -20,7 +19,8 @@
 			<!--<img src="https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas.svg">-->
 			<div class="logo-dna"><img src="https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas-white.svg"></div>
 			<fieldset>
-				<h2>Login: Certificação Produtividade de Vendas </h2>
+				
+				<h2><?php echo $_SESSION['nomeCliente']; ?>Login: Certificação Produtividade de Vendas </h2>
 				<h3>Insira corretamente seus dados para acessar prova de certificação</h3>
 				<input type="text" placeholder="email" name="emailCliente">
 				<input type="password" placeholder="senha" name="cSenhaCliente">

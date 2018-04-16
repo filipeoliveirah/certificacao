@@ -1,6 +1,6 @@
 <?php
-	session_start();
-	include("../functions.php");
+	
+	include_once("../functions.php");
 	$conn = new Certificacao();
 
 	if(isset($_POST['cadastrar']) && $_POST['cadastrar'] == 'sim'){
@@ -19,18 +19,17 @@
      		$respostas['getErro'] = 'A senha informadas não correspondem';
 		}*/
 		
-		else{			
-			$emailDigitado = $novos_campos['emailCliente'];
-			$senhaDigitada = $novos_campos['cSenhaCliente'];
-			
-			if($conn->validarLogin($emailDigitado, $senhaDigitada)){
+		else{
+			if($conn->validarLogin($novos_campos['emailCliente'], $novos_campos['cSenhaCliente'])){
 				$respostas['erro'] = 'nao';
 				$respostas['mensagem'] = 'Login feito com sucesso!</br> Você será redirecionado.';
-				$_SESSION['nomeCliente'] = $novos_campos['nomeCliente'];
-				$_SESSION['emailCliente'] = $novos_campos['emailCliente'];
+				$dadosCliente = $conn->dadosCliente($novos_campos['emailCliente'], $novos_campos['cSenhaCliente']);
+				$_SESSION['idCliente'] = $dadosCliente['id'];
+				$_SESSION['nomeCliente'] = utf8_decode($dadosCliente['nome']);
+				$_SESSION['emailCliente'] = $dadosCliente['email'];
 			}else{
 				$respostas['erro'] = 'sim';
-				 $respostas['getErro'] = 'Dados inválidos. Tente novamente.';
+				$respostas['getErro'] = 'Dados inválidos. Tente novamente.';
 			}
 		}
 		

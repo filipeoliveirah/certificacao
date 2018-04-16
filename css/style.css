@@ -1,9 +1,10 @@
 *{margin: 0; padding: 0;}
-html{height: 100%; background-size: cover;  background: linear-gradient(rgba(91, 173, 239, 0.7), rgba(0, 115, 157, 0.7)), url("../img/business-options-loan.jpg");
-background-size: cover; background-position: right}
-body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200}
+html{height: 100%; background-size: cover; 	background-size: cover; background-position: right}
+	.bg-login{background: linear-gradient(rgba(91, 173, 239, 0.7), rgba(0, 115, 157, 0.7)), url("../img/business-options-loan.jpg");}
+	.bg-cadastro{background: linear-gradient(rgba(91, 239, 155, 0.7), rgba(0, 115, 157, 0.7)), url("../img/business-options-loan.jpg")}
+body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200; overflow-y: hidden}
 
-.logo-dna{width: 140px; margin: 20px auto}
+.logo-dna{width: 120px; margin: 20px auto}
 .erros, .ok, .download, .alerta{
 	width: 390px;
 	padding: 5px;
@@ -28,20 +29,20 @@ body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200}
 .download a{text-decoration: none; color: white; font-weight: bold; text-transform: uppercase; font-weight: bold}
 
 #formulario{
-	max-width: 500px;
+	max-width: 700px;
 	margin: 0 auto;
 	text-align: center;
 	position: relative;
 }
 
-#formulario h2, #formulario h3{
-	font: 22px "Trebuchet", tahoma, arial;
+#formulario h2, #formulario h3, #formulario h1{
+	font: 17px "Trebuchet", tahoma, arial;
 	color: #278ab3;
 	text-align: left;
-	margin: 4% auto;
+	margin: 10px auto;
 }
-#formulario h3{color: #717171; font-size: 17px; margin: 10px 0}
-
+#formulario h3{color: #717171; font-size: 14px; margin: 10px 0}
+#formulario h1, #formulario h4{text-align: center;}
 #formulario fieldset{
 	background: rgba(999,999,999,0.8);
 	border: 0 none;
@@ -83,7 +84,8 @@ body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200}
 	font-weight: bold;
 	padding: 12px 0;
 	float: left;
-	margin-right: 5%; 
+	margin-right: 5%;
+	text-align: center; 
 }
 
 #formulario .acao:hover{
@@ -106,7 +108,7 @@ body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200}
 	text-transform: uppercase;
 	font-size: 10px;
 	float: left;
-	width: 33.33%;
+	width: 25%;
 	position: relative;
 } 
 
@@ -147,4 +149,4 @@ body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200}
 }
 
 .escolhas{margin: 10px}
-.escolhas select{ border-radius: 2px; padding: 5px; border: 1px solid #b2b2b2}
+.escolhas select{ border-radius: 2px; padding: 5px; border: 1px solid #b2b2b2; width: 100%}

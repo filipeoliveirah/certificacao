@@ -10,32 +10,18 @@
 	    foreach ($campos_post as $indice => $valor) {
 	    	$novos_campos[$valor['name']] = $valor['value']; 	
 		}
-		
-		$teste = true;		
-		for($esc = 1; $esc <= 12; $esc++){			
+				
+		for($esc = 1; $esc <= 20; $esc++){			
 			$resultado += $novos_campos['escolha'.$esc];
 		}
-
-		//$resultado /= $esc;
+		$esc -=1;
+		$resultado = ($resultado / $esc) * 10;
 		//$resultado = round($resultado, 1);
 		if($resultado >= 8){
 			$respostas['erro'] = 'nao';
-			$respostas['mensagem'] = 'Aprovado! ' . $resultado. 'Pontos';
+			$respostas['mensagem'] = 'Aprovado! Nota:' . $resultado;
 			$_SESSION['aprovado'] = 'sim';
 		}
-		
-     	/*if(!strstr($novos_campos['email'], '@')){
-     		$respostas['erro'] = 'sim';
-     		$respostas['getErro'] = 'Email inválido';
-     	}
-     	elseif($novos_campos['senha'] != $novos_campos['csenha']){
-     		$respostas['erro'] = 'sim';
-     		$respostas['getErro'] = 'As senhas informadas não correspondem';
-     	}
-     	elseif (!strstr($novos_campos['facebook'], 'http://')) {
-     		$respostas['erro'] = 'sim';
-     		$respostas['getErro'] = 'Endereço de Facebook deve conter http://';
-		}*/
 
 		else{
 			$respostas['erro'] = 'sim';
