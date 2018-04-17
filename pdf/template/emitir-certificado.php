@@ -11,14 +11,7 @@
     session_start();
     if(isset($_SESSION['aprovado']) && $_SESSION['aprovado'] == 'sim'){
         $html = '
-        <pageheader name="myHeaderNoNum" content-left="My Book Title" content-center="myHeader1" content-right="" header-style="font-family:sans-serif; font-size:8pt; color:#880000;" header-style-right="font-size:12pt; font-weight:bold; font-style:italic; color:#088000;" line="on" />
-
-        <pageheader name="myHeaderNoNumEven" content-left="" content-center="myHeader1Even" content-right="{DATE j-m-Y}" header-style="font-family:sans-serif; font-size:8pt; color:#000088;" header-style-left="font-weight:bold; " line="on" />
-
-        <pageheader name="myHeader1" content-left="My Book Title" content-center="myHeader1" content-right="{PAGENO}" header-style="font-family:sans-serif; font-size:8pt; color:#880000;" header-style-right="font-size:12pt; font-weight:bold; font-style:italic; color:#088000;" line="on" />
-
-        <pageheader name="myHeader1Even" content-left="{PAGENO}" content-center="myHeader1Even" content-right="{DATE j-m-Y}" header-style="font-family:sans-serif; font-size:8pt; color:#000088;" header-style-left="font-weight:bold; " line="on" />
-
+        
 
         <htmlpageheader name="myHTMLHeader1" style="display:none">
         <table width="100%" style="border-bottom: 1px solid #000000; vertical-align: bottom; font-family: serif; font-size: 9pt; color: #000088;"><tr>
@@ -44,7 +37,9 @@
         <setpageheader name="myHeaderNoNum" page="O" value="on" show-this-page="1" />
         <setpageheader name="myHeaderNoNumEven" page="E" value="on" />
 
-        <h1 style="margin-collapse: none; margin-top: 105mm; text-align: center">'.$_SESSION['nomeCliente'].'</h1>';
+        <h1 style="margin-collapse: none; margin-top: 105mm; text-align: center">'.$_SESSION['nomeCliente'].'</h1>
+        <h2 style="margin-collapse: none; margin-top: 17mm; text-align: center">'.date("d/m/Y").'</h2>';
+        
 
         include("../mpdf.php");
 

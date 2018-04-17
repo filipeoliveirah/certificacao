@@ -21,7 +21,7 @@
 			$nomeDigitado = $novos_campos['nomeCliente'];
 			$emailDigitado = $novos_campos['emailCliente'];
 			
-			$senhaGerada = "dN@-de-V3nD@$";
+			$senhaGerada = "dN@deV3nD@$";
 			
 			if($conn->cadastrar($nomeDigitado, $emailDigitado, $senhaGerada)){
 

@@ -6,7 +6,7 @@
 		<link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
 
-	<body class="bg-login">
+	<body class="bg-base">
 		<?php
 			include('functions.php');
 			$conn = new Certificacao();
