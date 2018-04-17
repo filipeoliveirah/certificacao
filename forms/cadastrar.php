@@ -21,11 +21,11 @@
 			$nomeDigitado = $novos_campos['nomeCliente'];
 			$emailDigitado = $novos_campos['emailCliente'];
 			
-			$senhaGerada = $conn->gerarSenha();
+			$senhaGerada = "dN@-de-V3nD@$";
 			
 			if($conn->cadastrar($nomeDigitado, $emailDigitado, $senhaGerada)){
 
-				$conn->enviarEmail($nomeDigitado, $emailDigitado, $senhaGerada);
+				//$conn->enviarEmail($nomeDigitado, $emailDigitado, $senhaGerada);
 				
 				$respostas['erro'] = 'nao';
 				$respostas['mensagem'] = 'Sucesso!</br>Você receberá um email com senha de acesso.';				

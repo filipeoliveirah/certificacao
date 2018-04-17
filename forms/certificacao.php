@@ -25,7 +25,7 @@
 
 		else{
 			$respostas['erro'] = 'sim';
-			$respostas['getErro'] = 'Você não foi aprovado! ' . $resultado . 'Pontos';
+			$respostas['getErro'] = 'Você não foi aprovado! ' . $resultado . ' Pontos';
 			$_SESSION['aprovado'] = 'nao';
 		}			
 		

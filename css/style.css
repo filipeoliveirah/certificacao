@@ -1,8 +1,9 @@
 *{margin: 0; padding: 0;}
-html{height: 100%; background-size: cover; 	background-size: cover; background-position: right}
-	.bg-login{background: linear-gradient(rgba(91, 173, 239, 0.7), rgba(0, 115, 157, 0.7)), url("../img/business-options-loan.jpg");}
-	.bg-cadastro{background: linear-gradient(rgba(91, 239, 155, 0.7), rgba(0, 115, 157, 0.7)), url("../img/business-options-loan.jpg")}
-body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200; overflow-y: hidden}
+html{height: 100%;}
+body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200;}
+
+.bg-login{background: linear-gradient(rgba(91, 173, 239, 0.7), rgba(0, 115, 157, 0.7), rgba(91, 173, 239, 0.7)), url("../img/business-options-loan.jpg"); background-size: cover; background-position: right}
+.bg-cadastro{background: linear-gradient(rgba(91, 239, 155, 0.7), rgba(0, 115, 157, 0.7), rgba(91, 239, 155, 0.7)), url("../img/business-options-loan.jpg"); background-size: cover; background-position: right}
 
 .logo-dna{width: 120px; margin: 20px auto}
 .erros, .ok, .download, .alerta{
@@ -33,6 +34,7 @@ body{font-family: "Trebuchet MS", tahoma, arial; font-weight: 200; overflow-y: h
 	margin: 0 auto;
 	text-align: center;
 	position: relative;
+	padding: 10px;
 }
 
 #formulario h2, #formulario h3, #formulario h1{

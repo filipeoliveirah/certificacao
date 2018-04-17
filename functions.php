@@ -8,11 +8,11 @@
 		var $host = 'localhost:';
 		var $port = 3306;		
 		/*
-		private $user = 'root';
-		private $password = 'fZBy8NhelGwQNS';
-		private $db = 'dna_certificacao';
-		private $host = 'pro-ciapipe.c6kc9wk9fak1.us-west-2.rds.amazonaws.com';
-		private $port = 3306;*/	
+		var $user = 'root';
+		var $password = 'fZBy8NhelGwQNS';
+		var $db = 'dna_certificacao';
+		var $host = 'pro-ciapipe.c6kc9wk9fak1.us-west-2.rds.amazonaws.com:';
+		var $port = 3306;*/
 				
 	}
 	
@@ -59,7 +59,7 @@
 			$rs = $stmt->fetch(PDO::FETCH_ASSOC);							
 			return $rs;			
 		}
-		
+		/*
 		public function gerarSenha(){
 			$length = 10;
 			$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -71,6 +71,7 @@
 			return $randomString;
 		}
 
+		
 		public function enviarEmail($nomeDigitado, $emailDigitado, $senhaGerada){
 			ini_set('display_errors', 1); 
 			error_reporting(E_ALL);			
@@ -80,7 +81,7 @@
 			$message = "Olá, ".$nomeDigitado."este é um email para confirmação do seu cadastro. Copie a senha abaixo para acessar o portal de certificação.</br>Senha:" .$senhaGerada;			
 			$headers = "De: contato@dnadevendas.com.br";			
 			mail($to, $subject, $message, $headers);				
-		}
+		}*/
 	}
 	//FIM CLASS CERTIFICACAO
 ?>

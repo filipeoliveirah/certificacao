@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html class="bg-login">
+<html>
 	<head>
 		<title>Certificação Mini Curso Produtividade de Vendas</title>
 		<meta charset="utf-8">
 		<link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
 
-	<body>
+	<body class="bg-login">
 		<?php
 			include('functions.php');
 			$conn = new Certificacao();
