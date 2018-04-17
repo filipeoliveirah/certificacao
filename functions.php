@@ -56,10 +56,8 @@
 			$stmt->bindValue(":emailUser", $emailDigitado);
 			$stmt->bindValue(":senhaUser", $senhaDigitada);
 			$stmt->execute();
-			$rs = $stmt->fetch(PDO::FETCH_ASSOC);
-							
-			return $rs;
-			
+			$rs = $stmt->fetch(PDO::FETCH_ASSOC);							
+			return $rs;			
 		}
 		
 		public function gerarSenha(){
@@ -71,6 +69,17 @@
 				$randomString .= $characters[rand(0, $charactersLength - 1)];
 			}
 			return $randomString;
+		}
+
+		public function enviarEmail($nomeDigitado, $emailDigitado, $senhaGerada){
+			ini_set('display_errors', 1); 
+			error_reporting(E_ALL);			
+			$from = "contato@dnadevendas.com.br";			
+			$to = $emailDigitado;			
+			$subject = "Dna de Vendas: Confirmando seu cadastro";			
+			$message = "Olá, ".$nomeDigitado."este é um email para confirmação do seu cadastro. Copie a senha abaixo para acessar o portal de certificação.</br>Senha:" .$senhaGerada;			
+			$headers = "De: contato@dnadevendas.com.br";			
+			mail($to, $subject, $message, $headers);				
 		}
 	}
 	//FIM CLASS CERTIFICACAO

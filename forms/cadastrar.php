@@ -22,12 +22,13 @@
 			$emailDigitado = $novos_campos['emailCliente'];
 			
 			$senhaGerada = $conn->gerarSenha();
-			//$assuntoEmail = "Confirmação de cadastro | Certificação Dna de Vendas";
+			
 			if($conn->cadastrar($nomeDigitado, $emailDigitado, $senhaGerada)){
+
+				$conn->enviarEmail($nomeDigitado, $emailDigitado, $senhaGerada);
+				
 				$respostas['erro'] = 'nao';
 				$respostas['mensagem'] = 'Sucesso!</br>Você receberá um email com senha de acesso.';				
-				//$conn->enviarEmail($emailDigitado, $senhaGerada, $assuntoEmail);
-				//PRECISO ENVIAR EMAIL PARA O CLIENTE
 			}
 			else{
 				$respostas['erro'] = 'sim';

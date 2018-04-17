@@ -20,13 +20,14 @@
 		}*/
 		
 		else{
-			if($conn->validarLogin($novos_campos['emailCliente'], $novos_campos['cSenhaCliente'])){
-				$respostas['erro'] = 'nao';
-				$respostas['mensagem'] = 'Login feito com sucesso!</br> Você será redirecionado.';
+			if($conn->validarLogin($novos_campos['emailCliente'], $novos_campos['cSenhaCliente'])){				
 				$dadosCliente = $conn->dadosCliente($novos_campos['emailCliente'], $novos_campos['cSenhaCliente']);
 				$_SESSION['idCliente'] = $dadosCliente['id'];
 				$_SESSION['nomeCliente'] = utf8_decode($dadosCliente['nome']);
 				$_SESSION['emailCliente'] = $dadosCliente['email'];
+				
+				$respostas['erro'] = 'nao';
+				$respostas['mensagem'] = 'Login feito com sucesso!</br> Você será redirecionado.';
 			}else{
 				$respostas['erro'] = 'sim';
 				$respostas['getErro'] = 'Dados inválidos. Tente novamente.';
