@@ -22,7 +22,7 @@
 				<h2>Cadastro: Certificação Produtividade de Vendas </h2>
 				<h3>Insira corretamente seus dados</h3>
 				<input type="text" placeholder="Nome completo" name="nomeCliente">
-				<input type="text" placeholder="email" name="emailCliente">
+				<input type="email" placeholder="email" name="emailCliente">
 				
 				<input type="submit" name="next1" class="next acao" value="Cadastrar"/>
 			</fieldset>

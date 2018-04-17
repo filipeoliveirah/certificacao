@@ -9,7 +9,7 @@
 <body>
     <?php
     session_start();
-    if(isset($_SESSION['aprovado']) && $_SESSION['aprovado'] == 'sim'){
+    if(isset($_SESSION['aprovado']) && $_SESSION['aprovado'] == 'nao'){
         $html = '
         
 

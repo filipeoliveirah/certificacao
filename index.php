@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Certificação Mini Curso Produtividade de Vendas</title>
+		<title>Certificação Minicurso Produtividade de Vendas</title>
 		<meta charset="utf-8">
 		<link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
@@ -22,14 +22,14 @@
 			<!--<img src="https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas.svg">-->
 			<div class="logo-dna"><img src="https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas-white.svg"></div>
 			<fieldset>
-			<h1>Certificação: Produtividade de Vendas</h1>
+			<h1>Certificação: Minicurso Produtividade de Vendas</h1>
 				<h4>Boa sorte, <?php echo $_SESSION['nomeCliente']; ?></h4>
 				<h3>1) Se ao dobrar o número de seus vendedores você conseguiu dobrar também suas vendas, isso significa que sua produtividade de vendas aumentou?</h3>
 				<div class="escolhas">
 					<select name="escolha1">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 
@@ -37,8 +37,8 @@
 				<div class="escolhas">
 					<select name="escolha2">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 
@@ -46,8 +46,8 @@
 				<div class="escolhas">
 					<select name="escolha3">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 
@@ -55,8 +55,8 @@
 				<div class="escolhas">
 					<select name="escolha4">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 
@@ -64,21 +64,21 @@
 				<div class="escolhas">
 					<select name="escolha5">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 				<input type="button" name="next1" class="next acao" value="Próximo"/>
 			</fieldset>
 
 			<fieldset>
-			<h1>Certificação: Mini Curso de Vendas</h1>
+			<h1>Certificação: Minicurso produtividade de Vendas</h1>
 				<h3>6) As metas devem sempre ser desafiadoras, independente se há ou não estrutura na empresa para realizá-las.</h3>
 				<div class="escolhas">
 					<select name="escolha6">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 
@@ -86,8 +86,8 @@
 				<div class="escolhas">
 					<select name="escolha7">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 
@@ -95,8 +95,8 @@
 				<div class="escolhas">
 					<select name="escolha8">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 
@@ -104,8 +104,8 @@
 				<div class="escolhas">
 					<select name="escolha9">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 
@@ -113,8 +113,8 @@
 				<div class="escolhas">
 					<select name="escolha10">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 				<input type="button" name="prev" class="prev acao" value="Anterior"/>
@@ -122,13 +122,13 @@
 			</fieldset>
 
 			<fieldset>
-			<h2>Certificação: Mini Curso de Vendas</h2>
-				<h3>11) Um dos problemas da planilha de vendas no Excel é o tempo que os vendedores e o gestor perde para atualizá-as.</h3>
+			<h2>Certificação: Minicurso produtividade de Vendas</h2>
+				<h3>11) Um dos problemas da planilha de vendas no Excel é o tempo que os vendedores e o gestor perdem para atualizá-as.</h3>
 				<div class="escolhas">
 					<select name="escolha11">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 
@@ -136,8 +136,8 @@
 				<div class="escolhas">
 					<select name="escolha12">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 
@@ -145,8 +145,8 @@
 				<div class="escolhas">
 					<select name="escolha13">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 
@@ -154,17 +154,17 @@
 				<div class="escolhas">
 					<select name="escolha14">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 
-				<h3>15) O funil de vendas para apresentar resultados precisa ser estático e inflexível</h3>
+				<h3>15) O funil de vendas precisa ser estático e inflexível para apresentar resultados.</h3>
 				<div class="escolhas">
 					<select name="escolha15">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 				<input type="button" name="prev" class="prev acao" value="Anterior"/>
@@ -172,13 +172,13 @@
 			</fieldset>
 
 			<fieldset>
-			<h2>Certificação: Mini Curso de Vendas</h2>
+			<h2>Certificação: Minicurso produtividade de Vendas</h2>
 				<h3>16) O CRM de Vendas é uma ferramenta indispensável para quem deseja ter produtividade de vendas.</h3>
 				<div class="escolhas">
 					<select name="escolha16">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 
@@ -186,8 +186,8 @@
 				<div class="escolhas">
 					<select name="escolha17">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 
@@ -195,8 +195,8 @@
 				<div class="escolhas">
 					<select name="escolha18">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 
@@ -204,8 +204,8 @@
 				<div class="escolhas">
 					<select name="escolha19">
 						<option value="">Escolha uma opção</option>
-						<option value="0">Sim</option>
-						<option value="1">Não</option>
+						<option value="0">Verdadeiro</option>
+						<option value="1">Falso</option>
 					</select> 
 				</div>
 
@@ -213,8 +213,8 @@
 				<div class="escolhas">
 					<select name="escolha20">
 						<option value="">Escolha uma opção</option>
-						<option value="1">Sim</option>
-						<option value="0">Não</option>
+						<option value="1">Verdadeiro</option>
+						<option value="0">Falso</option>
 					</select> 
 				</div>
 				<input type="button" name="prev" class="prev acao" value="Anterior"/>

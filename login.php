@@ -22,11 +22,11 @@
 				
 				<h2><?php echo $_SESSION['nomeCliente']; ?>Login: Certificação Produtividade de Vendas </h2>
 				<h3>Insira corretamente seus dados para acessar prova de certificação</h3>
-				<input type="text" placeholder="email" name="emailCliente">
+				<input type="email" placeholder="email" name="emailCliente">
 				<input type="password" placeholder="senha" name="cSenhaCliente">
 				
 				<input type="submit" name="next1" class="next acao" value="Entrar"/>
-				<a href="cadastro.php"><input type="text" name="next1" class="next acao" value="Primeiro Acesso"/></a>
+				<a href="cadastro.php"><input type="text" name="next1" class="next acao" value="Primeiro Acesso" style="float: right"/></a>
 			</fieldset>
 			<div class="resp">
 			</div>
