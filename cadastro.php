@@ -24,7 +24,7 @@
 				<input type="text" placeholder="Nome completo" name="nomeCliente">
 				<input type="email" placeholder="email" name="emailCliente">
 				
-				<input type="submit" name="next1" class="next acao" value="Cadastrar"/>
+				<input type="submit" name="next1" class="next acao" value="Cadastrar" style="float: none; margin: 0 auto"/>
 			</fieldset>
 			<div class="resp">
 			</div>
