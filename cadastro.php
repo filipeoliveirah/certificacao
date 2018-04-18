@@ -19,7 +19,7 @@
 			<!--<img src="https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas.svg">-->
 			<div class="logo-dna"><img src="https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas-white.svg"></div>
 			<fieldset>
-				<h2>Cadastro: Certificação Produtividade de Vendas </h2>
+				<h2>Cadastro: Certificação Minicurso Produtividade de Vendas </h2>
 				<h3>Insira corretamente seus dados</h3>
 				<input type="text" placeholder="Nome completo" name="nomeCliente">
 				<input type="email" placeholder="email" name="emailCliente">
