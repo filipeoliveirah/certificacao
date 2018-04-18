@@ -18,8 +18,9 @@
      		$respostas['getErro'] = 'A senha informadas não correspondem';
 		}*/				
 		else{
-			$nomeDigitado = $novos_campos['nomeCliente'];
-			$emailDigitado = $novos_campos['emailCliente'];
+
+			$nomeDigitado = $_POST['nomeCliente'];
+			$emailDigitado = $_POST['emailCliente'];
 			
 			$senhaGerada = "dN@deV3nD@$";
 			
