@@ -9,10 +9,8 @@
 <body>
     <?php
     session_start();
-    if(isset($_SESSION['aprovado']) && $_SESSION['aprovado'] == 'nao'){
+    if(isset($_SESSION['aprovado']) && $_SESSION['aprovado'] == 'sim'){
         $html = '
-        
-
         <htmlpageheader name="myHTMLHeader1" style="display:none">
         <table width="100%" style="border-bottom: 1px solid #000000; vertical-align: bottom; font-family: serif; font-size: 9pt; color: #000088;"><tr>
         <td width="33%">Left header p <span style="font-size:14pt;">{PAGENO}</span></td>

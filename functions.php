@@ -37,6 +37,19 @@
 			}
 		}
 
+		public function aprovarCertificacao($emailDigitado, $statusCertificacao){
+			$stmt = $this->pdo->prepare("UPDATE cadastro SET (aprovacao = :aprovacao) WHERE email = :email");
+							  
+			$stmt->bindValue(":aprovacao", $statusCertificacao);
+			$stmt->bindValue(":email", $emailDigitado);
+
+			if($run = $stmt->execute()){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
 		public function validarLogin($emailDigitado, $senhaDigitada){
 			$stmt = $this->pdo->prepare("SELECT email, senha FROM cadastro WHERE email = :emailUser
 			AND senha = :senhaUser");

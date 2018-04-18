@@ -68,7 +68,7 @@
 						<option value="0">Falso</option>
 					</select> 
 				</div>
-				<input type="button" name="next1" class="next acao" value="Próximo"/>
+				<input type="button" name="next1" class="next acao" value="Próximo" style="float: right"/>
 			</fieldset>
 
 			<fieldset>
@@ -118,7 +118,7 @@
 					</select> 
 				</div>
 				<input type="button" name="prev" class="prev acao" value="Anterior"/>
-				<input type="button" name="next2" class="next acao" value="Próximo"/>
+				<input type="button" name="next2" class="next acao" value="Próximo" style="float: right"/>
 			</fieldset>
 
 			<fieldset>
@@ -168,7 +168,7 @@
 					</select> 
 				</div>
 				<input type="button" name="prev" class="prev acao" value="Anterior"/>
-				<input type="button" name="next3" class="acao" value="Próximo"/>				
+				<input type="button" name="next3" class="acao" value="Próximo" style="float: right"/>				
 			</fieldset>
 
 			<fieldset>
@@ -218,7 +218,7 @@
 					</select> 
 				</div>
 				<input type="button" name="prev" class="prev acao" value="Anterior"/>
-				<input type="submit" name="next" class="acao" value="Enviar"/>				
+				<input type="submit" name="next" class="acao" value="Enviar" style="float: right"/>				
 			</fieldset>
 			<div class="resp">
 			</div>

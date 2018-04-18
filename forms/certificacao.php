@@ -19,12 +19,16 @@
 		//$resultado = round($resultado, 1);
 		if($resultado >= 8){
 			$respostas['erro'] = 'nao';
+			$statusCertificacao = 'Aprovado';
+			$conn->aprovarCertificacao($_SESSION['emailCliente'], $statusCertificacao);
 			$respostas['mensagem'] = 'Aprovado! Nota:' . $resultado;
 			$_SESSION['aprovado'] = 'sim';
 		}
 
 		else{
-			$respostas['erro'] = 'sim';
+			$respostas['erro'] = 'sim';			
+			$statusCertificacao = 'Reprovado';		
+			$conn->aprovarCertificacao($_SESSION['emailCliente'], $statusCertificacao);
 			$respostas['getErro'] = 'Você não foi aprovado! ' . $resultado . ' Pontos';
 			$_SESSION['aprovado'] = 'nao';
 		}			
