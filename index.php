@@ -23,7 +23,7 @@
 			<div class="logo-dna"><img src="https://www.dnadevendas.com.br/wp-content/themes/dnadevendas/images/logo-dnadevendas-white.svg"></div>
 			<fieldset>
 			<h1>Certificação: Minicurso Produtividade de Vendas</h1>
-				<h4>Boa sorte, <?php echo $_SESSION['nomeCliente']; ?></h4>
+				<h4>Boa sorte, <?php echo utf8_encode($_SESSION['nomeCliente']); ?></h4>
 				<h3>1) Se ao dobrar o número de seus vendedores você conseguiu dobrar também suas vendas, isso significa que sua produtividade de vendas aumentou?</h3>
 				<div class="escolhas">
 					<select name="escolha1">

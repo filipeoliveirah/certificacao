@@ -56,7 +56,7 @@
 			$stmt->bindValue(":emailUser", $emailDigitado);
 			$stmt->bindValue(":senhaUser", $senhaDigitada);
 			$stmt->execute();
-			if($stmt->rowCount() == 1){				
+			if($stmt->rowCount() >= 1){				
 				return true;
 			}else{
 				return false;

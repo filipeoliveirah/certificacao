@@ -17,7 +17,7 @@
 				<input type="text" placeholder="Nome completo" name="nomeCliente"/>
 				<input type="email" placeholder="email" name="emailCliente"/>
 				
-				<input type="submit" name="next1" class="next acao" value="Cadastrar"/>
+				<input type="submit" name="next1" class="next acao" value="Cadastrar" style="margin: 0 auto; float: left"/>
 				
 			</fieldset>			
 		
@@ -26,7 +26,7 @@
 				if(isset($_POST["nomeCliente"]) && ($_POST["nomeCliente"] != "") && ($_POST["emailCliente"] != "")){
 					if($conn->cadastrar($_POST["nomeCliente"], $_POST["emailCliente"], "dN@deV3nD@$") === true){?>
 						<div class="ok">
-							<p>Cadastrado com sucesso!</p>
+							<p>Cadastrado com sucesso! Confira sua caixa de email com os dados de acesso.</p>
 							<p><a href="login.php">Clique aqui para fazer login</a></p>
 						</div><?php
 					}else{?>

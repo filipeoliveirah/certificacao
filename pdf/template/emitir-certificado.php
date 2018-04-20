@@ -35,8 +35,8 @@
         <setpageheader name="myHeaderNoNum" page="O" value="on" show-this-page="1" />
         <setpageheader name="myHeaderNoNumEven" page="E" value="on" />
 
-        <h1 style="margin-collapse: none; margin-top: 105mm; text-align: center">'.$_SESSION['nomeCliente'].'</h1>
-        <h2 style="margin-collapse: none; margin-top: 17mm; text-align: center">'.date("d/m/Y").'</h2>';
+        <h1 style="margin-collapse: none; margin-top: 81mm; text-align: center">'.utf8_encode($_SESSION['nomeCliente']).'</h1>
+        <h2 style="margin-collapse: none; margin-top: 25mm; text-align: center">'.date("d/m/Y").'</h2>';
         
 
         include("../mpdf.php");
